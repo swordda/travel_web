@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>登录</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.41/vue.global.js"></script>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  {% load static %}
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="background-imag">
+  <div class="card">
+    <div class="card-bg">
+      <div class="card-body">
+        <h4 class="heading">旅游产品分析系统</h4>
+        <form class="form-primary">
+          <div class="form-group">
+            <input type="email" class="form-control fc2" id="input_email" placeholder="你的邮箱">
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="password" class="form-control fc2" id="input_password" placeholder="你的密码">
+          </div>
+          <br>
+          <div class="text-right"><a href="http://127.0.0.1:8000/sign" class="text-white">没有账号？来注册一个</a></div>
+          <br>
+          <button type="button" class="btn btn-block btn-lg bg-white mt-4" id="login">登录</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="{% static 'js/lg.js' %}"></script>
+
+</html>

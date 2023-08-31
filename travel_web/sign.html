@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>注册</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.41/vue.global.js"></script>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  {% load static %}
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="./tweb/static/css/style.css">
+</head>
+
+<body class="background-imag">
+  <div class="card">
+    <div class="card-bg">
+      <div class="card-body">
+        <h4 class="heading">用户注册</h4>
+        <form class="form-primary">
+          <div class="form-group">
+            <input type="email" class="form-control fc" id="input_email" placeholder="你的邮箱">
+            <button type="button" class="btns" id='sendemail'>发送验证码</button>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="input_password" placeholder="你的密码(长度在6-16位之间)">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="input_password2" placeholder="确认密码">
+          </div>
+          <div class="form-group">
+            <input type="input" class="form-control" id="input_check" placeholder="验证码">
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn-sg" id="formsubmit">注册</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./tweb/static/js/wd.js"></script>
+<script src="{% static 'js/wd.js' %}"></script>
+
+</html>

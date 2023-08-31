@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>旅游产品分析系统</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.41/vue.global.js"></script>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  {% load static %}
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/Mstyle.css' %}">
+</head>
+
+<body>
+  <header class="grid-header">
+    <div class="header-fixed">
+      <div class="header-inner">
+        <nav class="nav" id="nav">
+          <ul>
+            <li><a href="http://127.0.0.1:8000/login/">首页</a></li>
+            <li>
+              <p>{{ city }}</p>
+            </li>
+          </ul>
+          <div class="user-info">
+            <img src="{% static 'images/prv/usr.jpg' %}" alt="用户头像">
+            <p>{{ username }}</p>
+            <button type="button" class="btns" id="logout">登出</button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="backgrounds">
+    <div class="show_zone">
+      <div class="linner">
+        <div class="expl">
+          <h3>热门景区</h3>
+        </div>
+        <article class="szart">
+          {% for item in data %}
+          <section class="article-item">
+            <h5 class="title">
+              <a href="{{ item.sz_url }}">
+                <h4>{{ item.sz_name }}</h4>
+              </a>
+            </h5>
+
+            <div class="content">
+              <a href="{{ item.sz_url }}" class="cover img-light">
+                <img src="{{ item.sz_pic_url }}">
+              </a>
+              <p>{{ item.sz_sIntroduce }}</p>
+              <div class="score">
+                <span class="popu">人气:{{ item.sz_popu }}</span>
+                <span class="num">评分:{{ item.sz_score }}分</span>
+              </div>
+            </div>
+          </section>
+          {% endfor %}
+        </article>
+        <div class="expl">
+          <h3>热门美食</h3>
+        </div>
+        <article class="szart">
+          {% for item in data2 %}
+          <section class="article-item">
+            <h5 class="title">
+              <a href="#">
+                <h4>{{ item.sn_name }}</h4>
+              </a>
+            </h5>
+
+            <div class="content">
+              <a href="#" class="cover img-light">
+                <img src="{{ item.sn_pic_url }}">
+              </a>
+              <p>{{ item.sn_sIntroduce }}</p>
+            </div>
+          </section>
+          {% endfor %}
+        </article>
+      </div>
+      <div class="col-menu">
+        <div class="inner">
+          <div class="hc-menu">
+            <div class="title">
+              <h4>热门城市</h4>
+            </div>
+            <div class="index">
+              <nav class="nv3">
+                <ol>
+                  <li><a href="http://127.0.0.1:8000/city/?city=北京">北京</a></li>
+                  <li><a href="http://127.0.0.1:8000/city/?city=西安">西安</a></li>
+                  <li><a href="http://127.0.0.1:8000/city/?city=广州">广州</a></li>
+                  <li><a href="http://127.0.0.1:8000/city/?city=杭州">杭州</a></li>
+                  <li><a href="http://127.0.0.1:8000/city/?city=桂林">桂林</a></li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sczone">
+
+      </div>
+    </div>
+
+</body>
+<script src="{% static 'js/cd.js' %}"></script>
+
+</html>

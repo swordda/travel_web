@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>旅游产品分析系统</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.41/vue.global.js"></script>
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  {% load static %}
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/Mstyle.css' %}">
+</head>
+
+<body>
+  <header class="grid-header">
+    <div class="header-fixed">
+      <div class="header-inner">
+        <nav class="nav" id="nav">
+          <ul>
+            <li><a href="http://127.0.0.1:8000/login/">首页</a></li>
+            <li>
+              <p>{{ sz }}</p>
+            </li>
+          </ul>
+          <div class="user-info">
+            <img src="{% static 'images/prv/usr.jpg' %}" alt="用户头像">
+            <p>{{ username }}</p>
+            <button type="button" class="btns" id="logout">登出</button>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div id="backgrounds">
+    <div class="show_zone2">
+      <div class="heads">
+        <div class="pics">
+          <img src="{{ sz_pic_url }}">
+        </div>
+        <div class="ifm">
+          <p id="tit">{{ sz }}</p>
+          <p id="sco">评分:{{ sz_score }}/5 &nbsp 人气：{{ sz_popularity }}</p>
+          <p>营业时间：{{ sz_time }}</p>
+          <p>地址：{{ sz_address }}</p>
+        </div>
+      </div>
+      <div class="cont">
+        <div class="text">
+          <h3>景区介绍</h3>
+          <p>{{ sz_introduce }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="{% static 'js/cd.js' %}"></script>
+
+</html>
